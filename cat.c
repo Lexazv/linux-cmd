@@ -1,13 +1,13 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #define BUFFER_SIZE 256
 
 
 int outFullFile(FILE *stream)
 {
-	char *line = calloc(BUFFER_SIZE, sizeof(char));
+	char *line = (char *)calloc(BUFFER_SIZE, sizeof(char));
 
 	while (fgets(line, BUFFER_SIZE, stream) != NULL)
 	{
