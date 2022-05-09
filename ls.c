@@ -3,12 +3,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-
 void listDir(DIR *dir, int listAll)
 {
-    struct dirent *dirFile;
-
-    dirFile = (struct dirent *)malloc(sizeof(struct dirent));
+    struct dirent *dirFile = (struct dirent *)malloc(sizeof(struct dirent));
 
     while ((dirFile = readdir(dir)) != NULL)
     {
@@ -22,7 +19,6 @@ void listDir(DIR *dir, int listAll)
 
     free(dirFile);
 }
-
 
 int main(int argc, char *argv[])
 {
@@ -43,7 +39,7 @@ int main(int argc, char *argv[])
         case 'a':
             listDir(dir, 1);
             break;
-        
+
         case '?':
             exit(EXIT_FAILURE);
 
